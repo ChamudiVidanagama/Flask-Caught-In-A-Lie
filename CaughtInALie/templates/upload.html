@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Video Upload{% endblock %} {% block content
+%}
+<!--  <title>Python Flask - Video Upload and Play Example</title>
+    <h2>Select a video to upload and play</h2> -->
+<!-- <p>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+    </p> -->
+<div class="card text-center">
+    <div class="card-header">
+        <h1>Deception Detection</h1>
+        {% if filename %}
+        <br>
+        <div style="margin: 10px auto;">
+            <video width="1000" autoplay="autoplay" controls="controls" preload="preload">
+                <source src="{{ url_for('views.display_video', filename=filename) }}" type="video/mp4">
+                </source>
+            </video>
+        </div>
+        {% endif %}
+    </div>
+    <div class="card-body">
+        {% if not filename %}
+        <form method="post" action="/upload" enctype="multipart/form-data">
+            <div class="card-body" style="padding-top: 200px; padding-bottom: 200px;">
+                <div class="input-group mb-3">
+                    <div class="custom-file">
+                        <input type="file" name="file" class="custom-file-input" height="100" id="inputGroupFile01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose files</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-outline-primary btn-lg" value="Upload">Upload Video</button>
+            </div>
+            <br />
+        </form>
+        {% endif %}
+        {% if filename %}
+        <button type="submit" class="btn btn-outline-primary btn-lg">Detect Deception</button>
+        {% endif %}
+    </div>
+    <div class="card-footer text-muted" style="padding: 50px;">
+        Copyright © 2022 CaughtInALie. All Rights Reserved
+    </div>
+</div>
+{% endblock %}

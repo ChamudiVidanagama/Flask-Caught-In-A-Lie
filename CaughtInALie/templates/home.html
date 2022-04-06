@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="card text-center">
+  <div class="card-header">
+    <h1>New York Police Department</h1>
+  </div>
+  <div class="card-body" style="padding: 60px;">
+      <img src="../static/logo.png" class="img-thumbnail" alt="Responsive image" >
+      <br><br><br>
+      <p class="card-text"><b>Caught in a Lie</b>: Automated Deception Detection Using Facial Cues and Chirality</p>
+      <!-- <h5 class="card-title">Upload Interrogation Video</h5> -->
+      <br>
+    <button type="submit" class="btn btn-outline-primary btn-lg" value="Upload" onclick="window.location.href='/upload';">Detect Deception</button>
+  </div>
+  <div class="card-footer text-muted" style="padding: 50px;">
+    Copyright © 2022 CaughtInALie. All Rights Reserved
+  </div>
+</div>
+
+<!-- <h1 align="center">Notes</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for note in user.notes %}
+  <li class="list-group-item">
+    {{ note.data }}
+    <button type="button" class="close" onClick="deleteNote({{ note.id }})">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </li>
+  {% endfor %}
+</ul>
+<form method="POST">
+  <textarea name="note" id="note" class="form-control"></textarea>
+  <br />
+  <div align="center">
+    <button type="submit" class="btn btn-primary">Add Note</button>
+  </div>
+</form> -->
+{% endblock %}
